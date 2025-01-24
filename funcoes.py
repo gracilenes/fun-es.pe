@@ -79,55 +79,6 @@ def processa_dados(dados: List[str]) -> Dict[str, int]:
         resultado[item] = len(item)
     return resultado
 
-#Escopo Local e Escopo Global em Python#
-1. Escopo Local:
-- O escopo local refere-se às variáveis que são definidas dentro de uma função.
-- Essas variáveis só são acessíveis dentro da função em que foram criadas.
-- Quando a função termina de ser executada, as variáveis locais deixam de existir.
-- Se tentarmos acessar uma variável local fora da função, ocorrerá um erro de "NameError".
-Exemplo de escopo local:
-
-def minha_funcao():
-    x = 10  # Variável local, só visível dentro da função
-    print(x)
-
-minha_funcao()  # Saída: 10
-print(x)  # Erro: NameError: name 'x' is not defined
-
-2. Escopo Global:
-- O escopo global refere-se às variáveis que são definidas fora de qualquer função ou bloco de código.
-- Essas variáveis são acessíveis em todo o programa, em qualquer função.
-- Variáveis globais podem ser lidas (usadas) em uma função sem a necessidade de declará-las novamente, mas para modificá-las, 
-é preciso usar a palavra-chave "global" para informar ao Python que queremos modificar a variável global e 
-não criar uma variável local com o mesmo nome.
-Exemplo de escopo global:
-
-x = 10  # Variável global
-
-def minha_funcao():
-    print(x)  # Variável global acessível dentro da função
-
-minha_funcao()  # Saída: 10
-
-def altera_variavel_global():
-    global x
-    x = 20  # Modificando a variável global
-    print(x)
-
-altera_variavel_global()  # Saída: 20
-print(x)  # Saída: 20 (variável global foi modificada)
-
-#Encadeamento de Escopos (Closure):
-def funcao_pai():
-    x = 10
-
-    def funcao_filha():
-        print(x)  # A função filha pode acessar a variável x da função pai
-
-    funcao_filha()
-
-funcao_pai()  # Saída: 10
-
 #Argumentos *args e **kwargs
 O *args é usado para passar um número arbitrário de argumentos posicionais para uma função. O * antes de args indica que os argumentos 
 serão empacotados em uma tupla, que pode ser acessada dentro da função.
@@ -169,39 +120,3 @@ def exemplo(*args, **kwargs):
         print(f"{chave}: {valor}")
 
 exemplo(1, 2, 3, nome="Alice", idade=25)
-
-#Documentação de Código e Documentação de Funções em Python
-A documentação em Python é uma prática importante para tornar o código mais legível, facilitar a manutenção e colaboração entre desenvolvedores. 
-A documentação pode ser feita de diferentes formas, incluindo comentários explicativos no código e docstrings (strings de documentação) 
-para descrever funções, módulos e classes.
-
-#Comentários:
-Comentários são trechos de texto que explicam o funcionamento do código. Eles são precedidos pelo caractere # e são ignorados pelo interpretador Python, ou seja, não afetam a execução do programa. Comentários são úteis para adicionar notas explicativas, esclarecimentos e dicas para outras pessoas (incluindo você mesmo no futuro) que lerão o código.
-
-Exemplo de comentário:
-
-# Calcula a média de uma lista de números
-def calcular_media(lista):
-    total = sum(lista)
-    media = total / len(lista)
-    return media
-
-#Docstrings (Strings de Documentação)
-As docstrings são strings que descrevem o propósito e o comportamento de funções, módulos ou classes em Python. Elas são colocadas logo após 
-a definição de uma função, módulo ou classe, entre três aspas (simples ou duplas) e permitem que você escreva uma descrição mais detalhada da funcionalidade.
-
-Exemplo de docstring em uma função:
-
-def calcular_media(lista):
-    """
-    Calcula a média de uma lista de números.
-
-    Parâmetros:
-    lista (list): Uma lista contendo números para calcular a média.
-
-    Retorna:
-    float: A média dos números na lista.
-    """
-    total = sum(lista)
-    media = total / len(lista)
-    return media
