@@ -1,7 +1,7 @@
 def nome_da_funcao(parametros):
     # Bloco de código da função
     # Pode conter várias instruções
-    return valor_de_retorno
+    return
 
 #Parâmetros, parâmetros nomeados, retornos
 def saudacao(nome):
@@ -55,17 +55,12 @@ def soma(a: int, b: int) -> int:
     return resultado
 
 #Declaração de Tipo de Retorno
-Para especificar o tipo de retorno da função, utiliza-se a seta -> seguida do tipo desejado após o :.
-Exemplo:
 def saudacao(nome: str) -> str:
     return "Olá, " + nome
 
 #Declaração de Tipo Opcional
-Exemplo sem declarações de tipo:
-
 def multiplicacao(a, b):
     return a * b
-Exemplo com declarações de tipo:
 
 def multiplicacao(a: int, b: int) -> int:
     return a * b
@@ -80,10 +75,7 @@ def processa_dados(dados: List[str]) -> Dict[str, int]:
     return resultado
 
 #Argumentos *args e **kwargs
-O *args é usado para passar um número arbitrário de argumentos posicionais para uma função. O * antes de args indica que os argumentos 
-serão empacotados em uma tupla, que pode ser acessada dentro da função.
-
-Exemplo:
+#Exemplo:
 
 def soma(*args):
     total = 0
@@ -94,11 +86,9 @@ def soma(*args):
 resultado = soma(1, 2, 3, 4, 5)
 print(resultado)  # Saída: 15
 
-O **kwargs é usado para passar um número arbitrário de argumentos nomeados (keyword arguments) para uma função. O ** antes de kwargs indica que os argumentos 
-nomeados serão empacotados em um dicionário, que pode ser acessado dentro da função.
-
-Exemplo:
-
+#O **kwargs é usado para passar um número arbitrário de argumentos nomeados (keyword arguments) para uma função. O ** antes de kwargs indica que os argumentos 
+#nomeados serão empacotados em um dicionário, que pode ser acessado dentro da função.
+#Exemplo:
 def saudacao(**kwargs):
     for chave, valor in kwargs.items():
         print(f"{chave}: {valor}")
@@ -106,9 +96,8 @@ def saudacao(**kwargs):
 saudacao(nome="Alice", idade=25, cidade="São Paulo")
 
 #Utilizando ambos *args e **kwargs
-Você pode utilizar *args e **kwargs juntos em uma mesma função, permitindo que ela aceite qualquer combinação de argumentos posicionais e nomeados.
-
-Exemplo:
+#Você pode utilizar *args e **kwargs juntos em uma mesma função, permitindo que ela aceite qualquer combinação de argumentos posicionais e nomeados.
+#Exemplo:
 
 def exemplo(*args, **kwargs):
     print("Argumentos posicionais:")
